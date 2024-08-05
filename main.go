@@ -21,6 +21,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error generating plot: %v\n", err)
 		os.Exit(1)
 	}
-	
-	if err := pricesPlot.Save(15*vg.Inch, 4*vg.Inch,"ethereum_prices.png")
+
+	if err := pricesPlot.Save(15*vg.Inch, 4*vg.Inch, "ethereum_prices.png"); err != nil {
+		fmt.Fprintf(os.Stderr, "Error saving plot: %v\n", err)
+		os.Exit(1)
+	}
 }
